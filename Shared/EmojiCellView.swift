@@ -11,10 +11,17 @@ struct EmojiCellView: View {
     var emoji: Emoji
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("\(emoji.symbol) - \(emoji.name)")
-            Text("\(emoji.description)")
-                .font(.caption)
+        HStack {
+            Text(emoji.symbol)
+                .font(.system(size: 24))
+            
+            VStack(alignment: .leading) {
+                Text(emoji.name)
+                    .font(.title3)
+                Text(emoji.description)
+                    .font(.subheadline)
+                    .lineLimit(1)
+            }
         }
     }
 }
