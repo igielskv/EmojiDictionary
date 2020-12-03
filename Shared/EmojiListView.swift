@@ -13,8 +13,8 @@ struct EmojiListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(emojiViewModel.emojis, id: \.self) { emoji in
-                    EmojiCellView(emoji: emoji)
+                ForEach(emojiViewModel.emojis.indices) { index in
+                    EmojiCellView(emoji: emojiViewModel.emojis[index])
                 }
                 .onDelete(perform: deleteEmojis)
                 .onMove(perform: moveEmojis)
