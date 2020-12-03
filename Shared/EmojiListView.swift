@@ -9,12 +9,19 @@ import SwiftUI
 
 struct EmojiListView: View {
     @ObservedObject var emojiViewModel: EmojiViewModel
+    @State var presentEmojiDetail: Bool = false
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(emojiViewModel.emojis.indices) { index in
                     EmojiCellView(emoji: emojiViewModel.emojis[index])
+                        .onTapGesture {
+                            presentEmojiDetail = true
+                        }
+                        .sheet(isPresented: $presentEmojiDetail) {
+                            EmojiDetailView(emoji: emojiViewModel.emojis[index])
+                        }
                 }
                 .onDelete(perform: deleteEmojis)
                 .onMove(perform: moveEmojis)
