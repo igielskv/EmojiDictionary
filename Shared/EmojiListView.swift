@@ -14,17 +14,13 @@ struct EmojiListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(emojiViewModel.emojis.indices) { index in
-                    EmojiCellView(emoji: emojiViewModel.emojis[index])
-                        .onTapGesture {
-                            presentEmojiDetail = true
-                        }
-                        .sheet(isPresented: $presentEmojiDetail) {
-                            EmojiDetailView(emoji: emojiViewModel.emojis[index])
-                        }
+                ForEach(emojiViewModel.emojis) { emoji in
+                    Button(action: { presentEmojiDetail.toggle() }) {
+                        EmojiCellView(emoji: emoji)
+                    }
                 }
-                .onDelete(perform: deleteEmojis)
                 .onMove(perform: moveEmojis)
+                .onDelete(perform: deleteEmojis)
             }
             .navigationTitle("Emoji Dictionary")
             .navigationBarTitleDisplayMode(.inline)
@@ -36,7 +32,7 @@ struct EmojiListView: View {
         }
     }
     
-    func deleteEmojis(offsets: IndexSet) {
+    func deleteEmojis(at offsets: IndexSet) {
         emojiViewModel.emojis.remove(atOffsets: offsets)
     }
     

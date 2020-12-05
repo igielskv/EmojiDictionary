@@ -13,3 +13,9 @@ struct Emoji: Hashable {
     var description: String
     var usage: String
 }
+
+extension Emoji: Identifiable {
+    var id: Emoji {
+        self
+    }
+}
