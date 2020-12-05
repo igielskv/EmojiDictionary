@@ -9,14 +9,17 @@ import SwiftUI
 
 struct EmojiListView: View {
     @ObservedObject var emojiViewModel: EmojiViewModel
-    @State var presentEmojiDetail: Bool = false
+    @State var selectedEmoji: Emoji? = nil
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(emojiViewModel.emojis) { emoji in
-                    Button(action: { presentEmojiDetail.toggle() }) {
+                    Button(action: { selectedEmoji = emoji }) {
                         EmojiCellView(emoji: emoji)
+                    }
+                    .sheet(item: $selectedEmoji) { selectedEmoji in
+                        EmojiDetailView(emoji: selectedEmoji)
                     }
                 }
                 .onMove(perform: moveEmojis)

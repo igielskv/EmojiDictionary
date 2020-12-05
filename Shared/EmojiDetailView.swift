@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EmojiDetailView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var emoji: Emoji
     
     var body: some View {
@@ -31,6 +33,13 @@ struct EmojiDetailView: View {
             }
             .navigationTitle("Emoji Detail")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Text("Back")
+                    }
+                }
+            }
         }
     }
 }
