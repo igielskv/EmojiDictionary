@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmojiListView: View {
-    @ObservedObject var emojiViewModel: EmojiViewModel
+    @EnvironmentObject var emojiViewModel: EmojiViewModel
     @State var selectedEmoji: Emoji? = nil
     
     var body: some View {
@@ -46,6 +46,7 @@ struct EmojiListView: View {
 
 struct EmojiListView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiListView(emojiViewModel: EmojiViewModel())
+        EmojiListView()
+            .environmentObject(EmojiViewModel())
     }
 }

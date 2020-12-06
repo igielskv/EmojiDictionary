@@ -9,8 +9,12 @@ import SwiftUI
 
 struct EmojiDetailView: View {
     @Environment(\.presentationMode) var presentationMode
-    
+    @EnvironmentObject var emojiViewModel: EmojiViewModel
     @State var emoji: Emoji
+    
+    var emojiIndex: Int {
+        emojiViewModel.emojis.firstIndex(where: { $0.id == emoji.id })!
+    }
     
     var body: some View {
         NavigationView {
@@ -41,7 +45,10 @@ struct EmojiDetailView: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                    Button(action: {
+                        emojiViewModel.updateEmoji(at: emojiIndex, with: emoji)
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
                         Text("Save")
                     }
                 }
@@ -53,5 +60,6 @@ struct EmojiDetailView: View {
 struct EmojiDetailView_Previews: PreviewProvider {
     static var previews: some View {
         EmojiDetailView(emoji: EmojiViewModel().emojis[0])
+            .environmentObject(EmojiViewModel())
     }
 }

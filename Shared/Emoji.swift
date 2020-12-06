@@ -7,15 +7,10 @@
 
 import Foundation
 
-struct Emoji: Hashable {
+struct Emoji: Identifiable {
+    let id = UUID()
     var symbol: String
     var name: String
     var description: String
     var usage: String
-}
-
-extension Emoji: Identifiable {
-    var id: Emoji {
-        self
-    }
 }

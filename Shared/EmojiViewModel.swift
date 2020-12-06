@@ -23,4 +23,8 @@ class EmojiViewModel: ObservableObject {
         Emoji(symbol: "💤", name: "Snore", description: "Three blue \'z\'s.", usage: "tired, sleepiness"),
         Emoji(symbol: "🏁", name: "Checkered Flag", description: "A black-and-white checkered flag.", usage: "completion")
     ]
+    
+    func updateEmoji(at index: Int, with emoji: Emoji) {
+        emojis[index] = emoji
+    }
 }
