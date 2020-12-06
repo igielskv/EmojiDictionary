@@ -23,8 +23,10 @@
 		1B2E94BD25737EEC0023A1C6 /* EmojiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E94BB25737EEC0023A1C6 /* EmojiViewModel.swift */; };
 		1B2E94CB257386C50023A1C6 /* EmojiCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E94CA257386C50023A1C6 /* EmojiCellView.swift */; };
 		1B2E94CC257386C50023A1C6 /* EmojiCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E94CA257386C50023A1C6 /* EmojiCellView.swift */; };
-		1BDAB86025743381003CB596 /* EmojiDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAB85F25743381003CB596 /* EmojiDetailView.swift */; };
-		1BDAB86125743381003CB596 /* EmojiDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAB85F25743381003CB596 /* EmojiDetailView.swift */; };
+		1B31454A257D7490001876D0 /* EmojiFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B314549257D7490001876D0 /* EmojiFormView.swift */; };
+		1B31454B257D7490001876D0 /* EmojiFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B314549257D7490001876D0 /* EmojiFormView.swift */; };
+		1BDAB86025743381003CB596 /* EditEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAB85F25743381003CB596 /* EditEmojiView.swift */; };
+		1BDAB86125743381003CB596 /* EditEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAB85F25743381003CB596 /* EditEmojiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +65,8 @@
 		1B1D18582572F68D004EDC6D /* EmojiListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiListView.swift; sourceTree = "<group>"; };
 		1B2E94BB25737EEC0023A1C6 /* EmojiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewModel.swift; sourceTree = "<group>"; };
 		1B2E94CA257386C50023A1C6 /* EmojiCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCellView.swift; sourceTree = "<group>"; };
-		1BDAB85F25743381003CB596 /* EmojiDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiDetailView.swift; sourceTree = "<group>"; };
+		1B314549257D7490001876D0 /* EmojiFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiFormView.swift; sourceTree = "<group>"; };
+		1BDAB85F25743381003CB596 /* EditEmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmojiView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +120,8 @@
 				1B1D18012572F36B004EDC6D /* ContentView.swift */,
 				1B1D18582572F68D004EDC6D /* EmojiListView.swift */,
 				1B2E94CA257386C50023A1C6 /* EmojiCellView.swift */,
-				1BDAB85F25743381003CB596 /* EmojiDetailView.swift */,
+				1BDAB85F25743381003CB596 /* EditEmojiView.swift */,
+				1B314549257D7490001876D0 /* EmojiFormView.swift */,
 				1B2E94BB25737EEC0023A1C6 /* EmojiViewModel.swift */,
 				1B1D18512572F565004EDC6D /* Emoji.swift */,
 				1B1D18022572F36C004EDC6D /* Assets.xcassets */,
@@ -329,10 +333,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1D18522572F565004EDC6D /* Emoji.swift in Sources */,
+				1B31454A257D7490001876D0 /* EmojiFormView.swift in Sources */,
 				1B1D182B2572F36C004EDC6D /* ContentView.swift in Sources */,
 				1B1D18592572F68D004EDC6D /* EmojiListView.swift in Sources */,
 				1B2E94CB257386C50023A1C6 /* EmojiCellView.swift in Sources */,
-				1BDAB86025743381003CB596 /* EmojiDetailView.swift in Sources */,
+				1BDAB86025743381003CB596 /* EditEmojiView.swift in Sources */,
 				1B2E94BC25737EEC0023A1C6 /* EmojiViewModel.swift in Sources */,
 				1B1D18292572F36C004EDC6D /* EmojiDictionaryApp.swift in Sources */,
 			);
@@ -343,10 +348,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1D18532572F565004EDC6D /* Emoji.swift in Sources */,
+				1B31454B257D7490001876D0 /* EmojiFormView.swift in Sources */,
 				1B1D182C2572F36C004EDC6D /* ContentView.swift in Sources */,
 				1B1D185A2572F68D004EDC6D /* EmojiListView.swift in Sources */,
 				1B2E94CC257386C50023A1C6 /* EmojiCellView.swift in Sources */,
-				1BDAB86125743381003CB596 /* EmojiDetailView.swift in Sources */,
+				1BDAB86125743381003CB596 /* EditEmojiView.swift in Sources */,
 				1B2E94BD25737EEC0023A1C6 /* EmojiViewModel.swift in Sources */,
 				1B1D182A2572F36C004EDC6D /* EmojiDictionaryApp.swift in Sources */,
 			);

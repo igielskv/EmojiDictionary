@@ -19,7 +19,7 @@ struct EmojiListView: View {
                         EmojiCellView(emoji: emoji)
                     }
                     .sheet(item: $selectedEmoji) { selectedEmoji in
-                        EmojiDetailView(emoji: selectedEmoji)
+                        EditEmojiView(emoji: selectedEmoji)
                     }
                 }
                 .onMove(perform: moveEmojis)
