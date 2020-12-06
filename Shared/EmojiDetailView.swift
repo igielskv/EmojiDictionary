@@ -10,33 +10,39 @@ import SwiftUI
 struct EmojiDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var emoji: Emoji
+    @State var emoji: Emoji
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Symbol")) {
-                    Text(emoji.symbol)
+                    TextField("Symbol", text: $emoji.symbol)
                 }
                 
                 Section(header: Text("Name")) {
-                    Text(emoji.name)
+                    TextField("Name", text: $emoji.name)
                 }
                 
                 Section(header: Text("Description")) {
-                    Text(emoji.description)
+                    TextField("Description", text: $emoji.description)
                 }
                 
                 Section(header: Text("Usage")) {
-                    Text(emoji.usage)
+                    TextField("Usage", text: $emoji.usage)
                 }
             }
-            .navigationTitle("Emoji Detail")
+            .navigationTitle("Edit Emoji")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: { presentationMode.wrappedValue.dismiss() }) {
-                        Text("Back")
+                        Text("Cancel")
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Text("Save")
                     }
                 }
             }
